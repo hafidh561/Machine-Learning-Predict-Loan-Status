@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Machine Learning {{title}}</title>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='bootstrap.min.css') }}"
+		/>
+	</head>
+	<body>
+		<div class="container pt-4">
+			<h4>Machine Learning {{title}}</h4>
+			<p>
+				Just input the required data and the prediction result will come out
+			</p>
+			<form method="POST" action="">
+				{{ form.hidden_tag() }}
+				<div class="row pt-3">
+					<div class="col">
+						<div class="form-group">
+							{{ form.gender.label }}
+							{{ form.gender(class="form-control") }}
+						</div>
+					</div>
+					<div class="col">
+						<div class="form-group">
+							{{ form.married.label }}
+							{{ form.married(class="form-control") }}
+						</div>
+					</div>
+				</div>
+				<div class="row pt-3">
+					<div class="col">
+						<div class="form-group">
+							{{ form.dependents.label }}
+							{{ form.dependents(class="form-control") }}
+						</div>
+					</div>
+					<div class="col">
+						<div class="form-group">
+							{{ form.education.label }}
+							{{ form.education(class="form-control") }}
+						</div>
+					</div>
+				</div>
+				<div class="row pt-3">
+					<div class="col">
+						<div class="form-group">
+							{{ form.self_employed.label }}
+							{{ form.self_employed(class="form-control") }}
+						</div>
+					</div>
+					<div class="col">
+						<div class="form-group">
+							{{ form.applicant_income.label }}
+							{{ form.applicant_income(class="form-control") }}
+						</div>
+					</div>
+				</div>
+				<div class="row pt-3">
+					<div class="col">
+						<div class="form-group">
+							{{ form.coapplicant_income.label }}
+							{{ form.coapplicant_income(class="form-control") }}
+						</div>
+					</div>
+					<div class="col">
+						<div class="form-group">
+							{{ form.loan_amount.label }}
+							{{ form.loan_amount(class="form-control") }}
+						</div>
+					</div>
+				</div>
+				<div class="row pt-3">
+					<div class="col">
+						<div class="form-group">
+							{{ form.loan_amount_term.label }}
+							{{ form.loan_amount_term(class="form-control") }}
+						</div>
+					</div>
+					<div class="col">
+						<div class="form-group">
+							{{ form.credit_history.label }}
+							{{ form.credit_history(class="form-control") }}
+						</div>
+					</div>
+					<div class="col">
+						<div class="form-group">
+							{{ form.property_area.label }}
+							{{ form.property_area(class="form-control") }}
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col justify-content-center d-flex">
+						{{ form.submit(class="btn btn-primary mt-5") }}
+					</div>
+				</div>
+			</form>
+			<div class="row pt-5 pb-5">
+				<div class="col">
+					<h1 class="d-flex justify-content-center font-weight-bold">
+						{{ result }}
+					</h1>
+				</div>
+			</div>
+		</div>
+		<script src="{{ url_for('static', filename='jquery-3.5.1.slim.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+	</body>
+</html>
